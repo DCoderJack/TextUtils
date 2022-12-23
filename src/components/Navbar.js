@@ -9,12 +9,12 @@ export default function Navbar(props) {
       className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          {props.title}
-        </a>
-        {/* <a className="navbar-brand" href="/">
+        {/* <a className="navbar-brand" href="#">
           {props.title}
         </a> */}
+        <a className="navbar-brand" href="/">
+          {props.title}
+        </a>
         {/* <Link className="navbar-brand" to="/">
           {props.title}
         </Link> */}
@@ -33,12 +33,14 @@ export default function Navbar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">
-              {/* <Link className="nav-link active" aria-current="page" to="/"> */}
+              {/* <Link className="nav-link active" aria-current="page" to="/">
                 Home
+              </Link> */}
+              {/* // eslint-disable-next-line  */}
               </a>
             </li>
             {/* <li className="nav-item">
-              <Link className="nav-link" to="/About">
+              <Link className="nav-link active" to="/About">
                 {props.aboutText}
               </Link>
             </li> */}
@@ -55,9 +57,9 @@ export default function Navbar(props) {
             </button>
           </form> */}
 
-          <button type="button" className="btn btn-warning" id="yellowbtn" onClick={props.orangeMode}>Primary</button>
-          <button type="button" className="btn btn-primary" id="bluebtn" onClick={props.blueMode}>Secondary</button>
-          <button type="button" className="btn btn-success" id="greenbtn" onClick={props.greenMode}>Success</button>
+          <button type="button" className="btn btn-warning mx-1" id="yellowbtn" onClick={props.orangeMode}>Primary</button>
+          <button type="button" className="btn btn-primary mx-1" id="bluebtn" onClick={props.blueMode}>Secondary</button>
+          <button type="button" className="btn btn-success mx-1" id="greenbtn" onClick={props.greenMode}>Success</button>
 
           <div className= {`form-check form-switch text-${props.text}`} onClick={props.toggleMode}>
             <input
@@ -70,7 +72,7 @@ export default function Navbar(props) {
               className="form-check-label"
               htmlFor="flexSwitchCheckDefault"
             >
-              Enable Dark Mode
+              {props.mode} Mode Enabled
             </label>
           </div>
 

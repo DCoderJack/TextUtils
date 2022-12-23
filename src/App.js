@@ -27,12 +27,12 @@ function App() {
   }
 
   const toggleMode = () =>{
-    if(mode === 'light'){
+    if(mode === 'light' || mode !== 'dark'){
       setMode('dark');
       setText('light');
       showAlert("Dark Mode has been enabled!", "success");
       document.body.style.backgroundColor = '#042743';
-      document.title = 'TextUtils - Dark Mode';
+      // document.title = 'TextUtils - Dark Mode';
       // setInterval(() => {
       //   document.title = 'TextUtils is the best website';
       // }, 2000);
@@ -46,14 +46,14 @@ function App() {
       setText('dark');
       showAlert("Light Mode has been enabled!", "success");
       document.body.style.backgroundColor = 'white';
-      document.title = 'TextUtils - Light Mode';
+      // document.title = 'TextUtils - Light Mode';
     }
   }
     const orangeMode = () =>{
           if(mode === 'light' || mode === 'dark' || mode === 'blue' || mode === 'green')
           {
               setMode('orange')
-              setText('dark');
+              setText('light');
               showAlert("Orange Mode has been enabled!", "success");
               document.body.style.backgroundColor = 'orange';
           }
@@ -63,7 +63,7 @@ function App() {
       if(mode === 'light' || mode === 'dark' || mode === 'orange' || mode === 'green')
       {
         setMode('blue')
-        setText('dark');
+        setText('light');
         showAlert("Blue Mode has been enabled!", "success");
         document.body.style.backgroundColor = 'blue';
       }
@@ -73,7 +73,7 @@ function App() {
       if(mode === 'light' || mode === 'dark' || mode === 'orange' || mode === 'blue')
       {
         setMode('green')
-        setText('dark');
+        setText('light');
         showAlert("Green Mode has been enabled!", "success");
         document.body.style.backgroundColor = 'green';
       }
@@ -87,10 +87,10 @@ function App() {
       <div className="conatiner my-3">
         {/* <Routes> */}
               {/* <Route exact path="/about"
-                    element = {<About/>}>
+                    element = {<About mode={mode}/>}>
               </Route> */}
               {/* <Route exact path="/" */}
-                    {/* element = {<TextForm heading = "Type your text below" mode={mode} showAlert={showAlert}/>}> */}
+                    {/* element = {<TextForm heading = "Try TextUtils - Word counter | Character counter | Remove Extraspaces" mode={mode} showAlert={showAlert}/>}> */}
                     <TextForm heading = "Type your text below" mode={mode} showAlert={showAlert}/>
               {/* </Route> */}
         {/* </Routes> */}
